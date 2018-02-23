@@ -1,0 +1,8 @@
+.DS_Store
+*debug.log
+
+bundles
+lib
+esm
+node_modules
+reports
