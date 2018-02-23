@@ -1,12 +1,12 @@
-import { getBGColor, getBorderColor, getHoverColor, getSize, getTextColor } from './../helpers'
-import React from 'react'
+import { getBGColor, getBorderColor, getHoverColor, getSize, getTextColor } from './../helpers';
+import React from 'react';
 import styled, { keyframes, withTheme } from 'styled-components';
 
 class Button extends React.Component {
   render() {
     // Create element
     let BasicButton = styled.button`
-      ${this.props.theme.styles.button}
+      ${this.props.theme.elements.button}
     `;
     BasicButton  = BasicButton.extend`
       background-color: ${props => getBGColor(props)};
@@ -14,9 +14,11 @@ class Button extends React.Component {
       color: ${props => getTextColor(props)};
       &:focus {
         background-color: ${props => getHoverColor(getBGColor(props))};
+        border-color: ${props => getHoverColor(getBGColor(props))};
       }
       &:hover {
         background-color: ${props => getHoverColor(getBGColor(props))};
+        border-color: ${props => getHoverColor(getBGColor(props))};
       }
     `;
     let StyledButton = BasicButton;

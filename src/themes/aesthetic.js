@@ -3,14 +3,15 @@ import { mix } from 'polished';
 const theme = {
   colors: {
     danger: mix(0.5, 'rgb(192,192,192)', '#ff3860'),
+    default: 'rgb(192,192,192)',
     info: mix(0.5, 'rgb(192,192,192)', '#209cee'),
     link: mix(0.5, 'rgb(192,192,192)', '#3273dc'),
     primary: mix(0.5, 'rgb(192,192,192)', '#008080'),
     success: mix(0.5, 'rgb(192,192,192)', '#23d160'),
     warning: mix(0.5, 'rgb(192,192,192)', '#ffdd57'),
-    white: 'rgb(192,192,192)'
+    white: '#ffffff',
   },
-  styles: {
+  elements: {
     button: 
     `appearance: none;
     align-items: center;
@@ -42,7 +43,7 @@ const theme = {
     &:first-child {
       margin-left: 0;
     }`
-  }
+  },
 };
 
 export default theme;

@@ -29,7 +29,7 @@ class App extends Component {
       <ThemeProvider theme={theme}>
         <div className="app">
           <header className="app-header">
-            <h1>&lt;<span role="img" aria-label="Styled Components">💅</span>&gt; Styled Bloomer</h1>
+            <h1>Bloomer Next &lt;<span role="img" aria-label="Styled Components">💅</span>&gt;</h1>
           </header>
 
           <div className="app-content">

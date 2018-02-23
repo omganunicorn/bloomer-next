@@ -1,14 +1,15 @@
 const theme = {
   colors: {
     danger: '#ff3860',
+    default: '#ffffff',
     info: '#209cee',
     link: '#3273dc',
     primary: '#00d1b2',
     success: '#23d160',
     warning: '#ffdd57',
-    white: '#ffffff'
+    white: '#ffffff',
   },
-  styles: {
+  elements: {
     button: 
     `appearance: none;
     align-items: center;
@@ -40,7 +41,7 @@ const theme = {
     &:first-child {
       margin-left: 0;
     }`
-  }
+  },
 };
 
 export default theme;
