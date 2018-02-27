@@ -1,3 +1,5 @@
+import { getBGColor, getBorderColor, getHoverColor, getTextColor } from './../helpers';
+
 const theme = {
   colors: {
     danger: '#ff3860',
@@ -10,37 +12,46 @@ const theme = {
     white: '#ffffff',
   },
   elements: {
-    button: 
-    `appearance: none;
-    align-items: center;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    box-shadow: none;
-    box-sizing: border-box;
-    display: inline-flex;
-    font-size: 1rem;
-    height: 2.25em;
-    justify-content: flex-start;
-    line-height: 1.5;
-    margin-left: 5px;
-    padding-bottom: calc(0.375em - 1px);
-    padding-left: calc(0.625em - 1px);
-    padding-right: calc(0.625em - 1px);
-    padding-top: calc(0.375em - 1px);
-    position: relative;
-    vertical-align: top;
-    -webkit-touch-callout: none;
-    user-select: none;
-    cursor: pointer;
-    justify-content: center;
-    padding-left: 0.75em;
-    padding-right: 0.75em;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    &:first-child {
-      margin-left: 0;
-    }`
+    button(props) {
+      return `appearance: none;
+      align-items: center;
+      background-color: ${getBGColor(props)};
+      border: 1px solid transparent;
+      border-color: ${getBorderColor(props)};
+      border-radius: 3px;
+      box-shadow: none;
+      box-sizing: border-box;
+      color: ${getTextColor(props)};
+      display: inline-flex;
+      font-size: 1rem;
+      height: 2.25em;
+      justify-content: flex-start;
+      line-height: 1.5;
+      margin-left: 5px;
+      padding-bottom: calc(0.375em - 1px);
+      padding-left: calc(0.625em - 1px);
+      padding-right: calc(0.625em - 1px);
+      padding-top: calc(0.375em - 1px);
+      position: relative;
+      vertical-align: top;
+      -webkit-touch-callout: none;
+      user-select: none;
+      cursor: pointer;
+      justify-content: center;
+      padding-left: 0.75em;
+      padding-right: 0.75em;
+      text-align: center;
+      text-decoration: none;
+      white-space: nowrap;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:focus,
+      &:hover {
+        background-color: ${getHoverColor(getBGColor(props))};
+        border-color: ${getHoverColor(getBGColor(props))};
+      }`
+    },
   },
 };
 

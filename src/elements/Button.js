@@ -1,27 +1,15 @@
-import { getBGColor, getBorderColor, getHoverColor, getSize, getTextColor } from './../helpers';
+import { getSize } from './../helpers';
 import React from 'react';
 import styled, { keyframes, withTheme } from 'styled-components';
 
 class Button extends React.Component {
   render() {
     // Create element
-    let BasicButton = styled.button`
-      ${this.props.theme.elements.button}
-    `;
-    BasicButton  = BasicButton.extend`
-      background-color: ${props => getBGColor(props)};
-      border-color: ${props => getBorderColor(props)};
-      color: ${props => getTextColor(props)};
-      &:focus {
-        background-color: ${props => getHoverColor(getBGColor(props))};
-        border-color: ${props => getHoverColor(getBGColor(props))};
-      }
-      &:hover {
-        background-color: ${props => getHoverColor(getBGColor(props))};
-        border-color: ${props => getHoverColor(getBGColor(props))};
-      }
+    const BasicButton = styled.button`
+      ${this.props.theme.elements.button(this.props)}
     `;
     let StyledButton = BasicButton;
+
     if (this.props.isSmall || this.props.isMedium || this.props.isLarge) {
       const isSize = getSize(this.props);
       const sizes = {
@@ -37,7 +25,7 @@ class Button extends React.Component {
         },
       };
       StyledButton = StyledButton.extend`
-        border-radius: ${sizes[isSize].borderRadius || '2px'};
+        border-radius: ${sizes[isSize].borderRadius || '3px'};
         font-size: ${sizes[isSize].fontSize};
       `;
     }
